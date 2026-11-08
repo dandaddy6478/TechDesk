@@ -1,0 +1,13 @@
+﻿@model Device
+<h1>@Model.Name</h1>
+<dl>
+    <dt>@Html.DisplayNameFor(m => m.AssetTag)</dt>
+    <dd>@Model.AssetTag</dd>
+    <dt>@Html.DisplayNameFor(m => m.Category)</dt>
+    <dd>@Model.Category</dd>
+    <dt>@Html.DisplayNameFor(m => m.PurchaseYear)</dt>
+    <dd>@Model.PurchaseYear</dd>
+    <dt>Status</dt>
+    <dd>@(Model.IsOnLoan ? "On loan" : "Available")</dd>
+</dl>
+<a asp-action="Index">Back to the list</a>

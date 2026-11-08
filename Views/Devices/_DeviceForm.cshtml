@@ -1,0 +1,26 @@
+﻿@model Device
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="mb-3">
+    <label asp-for="AssetTag" class="form-label"></label>
+    <input asp-for="AssetTag" class="form-control" />
+    <span asp-validation-for="AssetTag" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Name" class="form-label"></label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Category" class="form-label"></label>
+    <input asp-for="Category" class="form-control" />
+    <span asp-validation-for="Category" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="PurchaseYear" class="form-label"></label>
+    <input asp-for="PurchaseYear" class="form-control" />
+    <span asp-validation-for="PurchaseYear" class="text-danger"></span>
+</div>
+<div class="form-check mb-3">
+    <input asp-for="IsOnLoan" class="form-check-input" />
+    <label asp-for="IsOnLoan" class="form-check-label"></label>
+</div>

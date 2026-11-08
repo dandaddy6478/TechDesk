@@ -1,0 +1,10 @@
+﻿@model Device
+<h1>Add a device</h1>
+<form method="post" asp-action="Add">
+    <partial name="_DeviceForm" model="Model" />
+    <button class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-link">Cancel</a>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

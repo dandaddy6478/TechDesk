@@ -1,0 +1,38 @@
+﻿@model List<Device>
+@{
+    ViewData["Title"] = "Devices";
+}
+
+<h1>Devices</h1>
+
+@if (TempData["Message"] is string msg)
+{
+    <div class="alert alert-success">@msg</div>
+}
+
+<form method="get" asp-action="Index" class="row g-2 mb-3">
+    <div class="col-auto">
+        <input name="search" value="@ViewBag.Search" class="form-control" placeholder="Part of the name" />
+    </div>
+    <div class="col-auto form-check pt-2">
+        <input type="checkbox" id="availableOnly" name="availableOnly" value="true"
+               class="form-check-input" @(ViewBag.AvailableOnly == true ? "checked" : "") />
+        <label for="availableOnly" class="form-check-label">Available only</label>
+    </div>
+    <div class="col-auto"><button class="btn btn-primary">Find</button></div>
+</form>
+
+<p>@ViewBag.CountText</p>
+<a asp-action="Add" class="btn btn-success mb-2">Add a device</a>
+
+<table class="table">
+    <thead>
+        <tr><th>Asset tag</th><th>Name</th><th>Category</th><th>Year bought</th><th>Status</th><th></th></tr>
+    </thead>
+    <tbody>
+        @foreach (var d in Model)
+        {
+            <partial name="_DeviceRow" model="d" />
+        }
+    </tbody>
+</table>

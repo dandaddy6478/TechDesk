@@ -1,0 +1,6 @@
+﻿@model Device
+<h1>Delete @Model.AssetTag @Model.Name?</h1>
+<form method="post" asp-action="DeleteConfirmed" asp-route-id="@Model.Id">
+    <button class="btn btn-danger">Yes</button>
+    <a asp-action="Index" class="btn btn-link">No</a>
+</form>
